@@ -4,7 +4,10 @@
 def getIntegers(myList):
     # myList : expected list or tuple
     # iterate through myList and add all the integers to the new list
-    integers = [myList]
+    integers = []
+    for i in myList:
+        if isinstance(i, int) == True:
+            integers.append(i)
 
     return integers
 
@@ -21,7 +24,7 @@ def getFactor(myList,factor):
         else:
             print(f"{i} is not a factor.")
 
-    print(factorlist)
+    return factorlist
 
 def getNegatives(myList):
     # myList : expected list or tuple
@@ -77,12 +80,14 @@ def main():
     easy2 = [-2,-4,-6,2,4,6,0.1]
     numbers1 = [3,5,8,12,11,19,10,7,2,15,25,34,16,32,50,60,100,-3,0.25]
     numbers2 = [3,7,11,15,19,23,27,31,35,39,44,50]
-    #getFactor(easy1,5)
+    #getFactor(numbers1,1)
     #print(getNegatives(easy2))
     #print(getIntersection(numbers1,numbers2))
-    #print(getMerge(easy1,easy2))
-    print(getUnion(numbers1,numbers2))
+    print(getMerge(numbers1,numbers2))
+    #print(getUnion(numbers1,numbers2))
     #print(getIntersection(easy1,easy2))
+    #print(getFactor(easy2,2))
+    #print(getIntegers(easy2))
 
 if __name__ == "__main__":
     main()
